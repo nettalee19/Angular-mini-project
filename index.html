@@ -7,8 +7,8 @@
     <title>Cloth shop</title>
 </head>
 <!-- <body ng-init="data={name:'Netta', loggedIn:true, isVisible:true, status:'red'}, names=['netta','aya','tully']"> -->
-<body ng-init="people=['netta','aya','tully']">
-    {{ 1+5 }}
+<body ng-controller="ProductsController">
+    <!-- {{ 1+5 }}
     <div ng-switch on="data.loggedIn">
         <div ng-switch-when="true">Welcome {{ data.name }}</div>
         <div ng-switch-default >Login</div>
@@ -16,12 +16,21 @@
 
     <div ng-show="data.isVisible">
         <input type="text" ng-model="data.name"/>
-    </div>
+    </div> -->
 
-    <ul>
-        <li ng-repeat="person in people">{{ person }}</li>
-    </ul>
+    <table>
+        <tr>
+            <td>name</td>
+            <td>city</td>
+        </tr>
+        <tr ng-repeat="prod in products">
+            <td>{{ prod.name }}</td>
+            <td>{{ prod.city }}</td>
+        </tr>
+    </table>
+    <span>Total products: {{ products.length }} </span>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="app/controllers/productsController.js"></script>
 </body>
 </html>
